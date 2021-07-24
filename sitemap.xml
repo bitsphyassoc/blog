@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://bitsphyassoc.github.io/https:/bitsphyassoc.github.io/about/</loc>
+<loc>https://bitsphyassoc.github.io/blog/https:/bitsphyassoc.github.io/about/</loc>
 </url>
 <url>
-<loc>https://bitsphyassoc.github.io/</loc>
+<loc>https://bitsphyassoc.github.io/blog/</loc>
 </url>
 <url>
-<loc>https://bitsphyassoc.github.io/search/</loc>
+<loc>https://bitsphyassoc.github.io/blog/search/</loc>
 </url>
 <url>
-<loc>https://bitsphyassoc.github.io/categories/</loc>
+<loc>https://bitsphyassoc.github.io/blog/categories/</loc>
 </url>
 </urlset>

@@ -8,7 +8,7 @@
       "page1": {
           "title": "About Us",
           "content": "",
-          "url": "https://bitsphyassoc.github.io/https:/bitsphyassoc.github.io/about/",
+          "url": "https://bitsphyassoc.github.io/blog/https:/bitsphyassoc.github.io/about/",
           "relUrl": "/https:/bitsphyassoc.github.io/about/",
           "date": ""
       }
@@ -40,7 +40,7 @@
       ,"page10": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
-          "url": "https://bitsphyassoc.github.io/robots.txt",
+          "url": "https://bitsphyassoc.github.io/blog/robots.txt",
           "relUrl": "/robots.txt",
           "date": ""
       }
