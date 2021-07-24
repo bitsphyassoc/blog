@@ -4,7 +4,7 @@ description: "Shanmugha Balan"
 layout: post
 toc: false
 comments: true
-image: images/blog_covers/{a cover image for your article (optional)}
+image: https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/1-remarkable/image5.png
 hide: false
 search_exclude: false
 categories: [Welcome, Many Worlds, Physics, Evolution]
@@ -12,7 +12,7 @@ categories: [Welcome, Many Worlds, Physics, Evolution]
 
 Utter emptiness. A lacuna, an oblivion of nothingness like no other. Or so we think, for nothing is certain about this place. If we can call it a place. If we can go back to before it happened. But how do you define time here? And then it happens. A blink is too long of an interval to describe it. Before you know it, there’s everything. If you were there you wouldn’t fit. If you did fit, you wouldn’t be able to see. Assuming none of the other myriad problems are our concern. After all, we neglect air resistance and higher-order terms. Soon, you have enough room growing around you, the region clears up and stuff gets moving around you. You have space to move about and so does light, meaning you can finally see. Before you know it, all the good stuff is over. The only major artifact of this fantastic event is a tiny whine which was mistaken for pigeon droppings.
 
-|![The cosmic microwave background radiation](A permalink to the image) | 
+|![The cosmic microwave background radiation](https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/1-remarkable/image1.png) | 
 |:--:| 
 | *The cosmic microwave background radiation, [^1]* |
 
@@ -22,7 +22,7 @@ Time goes on. More chunks and more balls of fire.
 
 A million is much larger than you think. Errors in the million are colossal. Quantities which demand such extravagant errors are extravagant themselves. With our logarithmic minds already having lost track of these scales, what are three more zeros at the end? We flash by a few of these with nothing of interest happening. A violent collision gifted us the Selene, and we’re still not close to all that much happening.
 
-|![The Giant Impact Hypothesis](A permalink to the image) | 
+|![The Giant Impact Hypothesis](https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/1-remarkable/image3.png) | 
 |:--:| 
 | *The Giant Impact Hypothesis, [^1]* |
 
@@ -30,7 +30,7 @@ We have some chemical magic to create biology, and Charles Darwin will help us c
 
 A flurry of discoveries and developments well documented by many others across the world leaves little that remains to be said. The spark from the flint had become a wildfire and the hunger fueled by our megalomania gave us things we would never have imagined when we evolved into being. Lord Kelvin once said that physics was done for. Everything we’d ever hoped to discover or find was found, we’d only have to measure things more precisely for the sake of it. He couldn’t be further from the truth. With Max Planck playing spoilsport and opening up a whole new world, it turns out that we have much left to find. 
 
-|![A timeline we don’t want to be in](A permalink to the image) | 
+|![A timeline we don’t want to be in](https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/1-remarkable/image2.png) | 
 |:--:| 
 | *A timeline we don’t want to be in* |
 
@@ -38,7 +38,7 @@ Chances are you’ve heard of the many-worlds interpretation of quantum mechanic
 
 The advent of computers has accelerated everything. The white horse we were riding on has become a tidal wave. Physics has been revolutionized by the data wave. Massive amounts of observational data are changing the way we formulate theories. The image of the black hole taken by the EHT had PETABYTES of data, all for one lovely image. Seriously, I can see stuff around me better without my spectacles. We are but a feather in this data storm. To understand the large, we’d have to understand the small. We’d also want to mess around with simulations of quantum activity, to speed up the very thing we’re using to simulate our stuff right now. A positive feedback loop!
 
-|![M87\*, the first image of a black hole taken by the EHT Collaboration](A permalink to the image) | 
+|![M87\*, the first image of a black hole taken by the EHT Collaboration](https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/1-remarkable/image4.png) | 
 |:--:| 
 | *M87\*, the first image of a black hole taken by the EHT Collaboration, [^1]* |
 
