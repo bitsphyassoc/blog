@@ -1,1 +1,1 @@
-Sitemap: https://bitsphyassoc.github.io/blog/sitemap.xml
+Sitemap: https://bitsphyassoc.github.io/sitemap.xml
