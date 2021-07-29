@@ -10,7 +10,7 @@ https://bitsphyassoc.github.io/blog/
 
 _powered by [fastpages](https://github.com/fastai/fastpages)_
 
-We may have support for Word and Jupyter, in addition to markdown, but we prefer to stick to only markdown for standard articles. For general markdown syntax, you can refer to this [cheat sheet](markdownguide.org/cheat-sheet/). In addition to that, every markdown file must have the following header:
+We may have support for Word and Jupyter, in addition to markdown, but we prefer to stick to only markdown for standard articles. For general markdown syntax, you can refer to this [cheat sheet](markdownguide.org/cheat-sheet/). There are numerous other resources to learn markdown which you can make use of. Markdown is a superset of standard HTML syntax which means you can use HTML tags within your articles as well. After you've got this down, you can begin transfering your article into markdown. Every markdown file which is an article must have the following header:
 
 ```
 ---
@@ -41,4 +41,4 @@ followed by
 [^n]: in the bottom as footnotes with credits for the photo
 ```
 
-Finally, save the file in the format `YYYY-MM-DD-*.md`, with each word in the title being hyphen-separated. When you're done with all of this, you can push the article for publication.
+In case you want to use your own image for the article rather than using one from the web (because you made it yourself/cropped/edited it), upload it into the `/images/blog/{article number}-{first word of title}/` directory. This will let you access the image from the permalink "https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/{article number}-{first word of title}/{image file}". Finally, save the file in the format `YYYY-MM-DD-*.md`, with each word in the title being hyphen-separated. When you're done with all of this, you can push the article for publication.
