@@ -1,6 +1,7 @@
 ---
 title: "Remarkable Coincidences"
-description: "Shanmugha Balan"
+author: "Shanmugha Balan"
+description: "Hey! We of the physics association have a new blog. We hope you like it!"
 layout: post
 toc: false
 comments: true
