@@ -6,24 +6,39 @@
 
 https://bitsphyassoc.github.io/blog/
 
-# My Blog
-
+# BITS Phy Assoc Blog
 
 _powered by [fastpages](https://github.com/fastai/fastpages)_
 
+We may have support for Word and Jupyter, in addition to markdown, but we prefer to stick to only markdown for standard articles. For general markdown syntax, you can refer to this [cheat sheet](markdownguide.org/cheat-sheet/). In addition to that, every markdown file must have the following header:
 
-## What To Do Next?
+```
+---
+title: "With the title duh"
+description: "A short description (20 words max)"
+author: "Multiple authors", "Can be added like this"
+layout: post            # Remove text beyond the #
+toc: false              # If you want a table of contents based on markdown headers
+comments: true          # If you want to enable/disable comments on the post
+image:                  # Provide a permalink to an image which will be the cover of the article
+hide: false             # Don't change
+search_exclude: false   # Don't change
+categories: ["Add", "Multiple", "Tags"]
+---
+```
 
-Great!  You have setup your repo.  Now its time to start writing content.  Some helpful links:
+Within the article you can have text and even LaTeX for math (for God's sake don't put a png of math). Refer to the cheat sheet if you want additional formatting like tables and emphasis. For images, please use the format as described here:
 
-- [Writing Blogs With Jupyter](https://github.com/fastai/fastpages#writing-blog-posts-with-jupyter)
+```
+|![Alt Text](Permalink to image) | 
+|:--:| 
+| *Caption, [^n]* |
+```
 
-- [Writing Blogs With Markdown](https://github.com/fastai/fastpages#writing-blog-posts-with-markdown)
+followed by 
 
-- [Writing Blog Posts With Word](https://github.com/fastai/fastpages#writing-blog-posts-with-microsoft-word)
+```
+[^n]: in the bottom as footnotes with credits for the photo
+```
 
-- [(Optional) Preview Your Blog Locally](_fastpages_docs/DEVELOPMENT.md)
-
-Note: you may want to remove example blog posts from the `_posts`,  `_notebooks` or `_word` folders (but leave them empty, don't delete these folders) if you don't want these blog posts to appear on your site.
-
-Please use the [nbdev & blogging channel](https://forums.fast.ai/c/fastai-users/nbdev/48) in the fastai forums for any questions or feature requests.
+Finally, save the file in the format `YYYY-MM-DD-*.md`, with each word in the title being hyphen-separated. When you're done with all of this, you can push the article for publication.
