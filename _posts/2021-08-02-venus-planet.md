@@ -5,7 +5,7 @@ author: "Suyash Kumar"
 layout: post           
 toc: false              
 comments: true          
-image: https://d1e00ek4ebabms.cloudfront.net/production/675adf3d-8534-4c21-8624-2da0559504fe.jpg              
+image: https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/2-venus/cover.jpg
 hide: false             
 search_exclude: false   
 categories: ["science","space","cosmos","venus","solar system","planets"]
