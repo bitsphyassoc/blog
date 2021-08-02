@@ -11,7 +11,7 @@ search_exclude: false
 categories: ["Particle Physics", "Standard Model", "Elementary Particles", "Universe"]
 ---
 
-## What we already know:
+## What we already know: 
 In our high school, we were all taught about Ernest Rutherford, J.J Thompson, and James Chadwick, who discovered the proton, electron and neutron, respectively. Ernest Rutherford was further able to predict the structure of the atom. These were significant discoveries as they were a step up from the previously existing theoretical description of atoms. Protons, electrons, and neutrons were described as fundamental particles making up everything that the universe contains.
 
 |![YOU KNOW THIS ALREADY, DON'T YOU??!](https://www.nuclearsafety.gc.ca/images/radiation-information/atom-eng.gif) | 
