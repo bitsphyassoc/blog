@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>A Primer to the Standard Model | bitsphyassoc - blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="A Primer to the Standard Model" />
+<meta name="author" content="Abhinav Choudhary" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Let me introduce you to world of particle physics" />
+<meta property="og:description" content="Let me introduce you to world of particle physics" />
+<link rel="canonical" href="https://bitsphyassoc.github.io/blog/particle%20physics/standard%20model/elementary%20particles/universe/2021/08/02/standard-model.html" />
+<meta property="og:url" content="https://bitsphyassoc.github.io/blog/particle%20physics/standard%20model/elementary%20particles/universe/2021/08/02/standard-model.html" />
+<meta property="og:site_name" content="bitsphyassoc - blog" />
+<meta property="og:image" content="https://physicsworld.com/wp-content/uploads/2020/04/Martina-Hestericova-3-April-Quantum-computing-for-high-energy-physics_authorized.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-02T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://bitsphyassoc.github.io/blog/particle%20physics/standard%20model/elementary%20particles/universe/2021/08/02/standard-model.html","@type":"BlogPosting","headline":"A Primer to the Standard Model","dateModified":"2021-08-02T00:00:00-05:00","datePublished":"2021-08-02T00:00:00-05:00","image":"https://physicsworld.com/wp-content/uploads/2020/04/Martina-Hestericova-3-April-Quantum-computing-for-high-energy-physics_authorized.jpg","author":{"@type":"Person","name":"Abhinav Choudhary"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bitsphyassoc.github.io/blog/particle%20physics/standard%20model/elementary%20particles/universe/2021/08/02/standard-model.html"},"description":"Let me introduce you to world of particle physics","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://bitsphyassoc.github.io/blog/feed.xml" title="bitsphyassoc - blog" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">bitsphyassoc - blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">A Primer to the Standard Model</h1><p class="page-description">Let me introduce you to world of particle physics</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-02T00:00:00-05:00" itemprop="datePublished">
+        Aug 2, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Abhinav Choudhary</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      8 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#Particle Physics">Particle Physics</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#Standard Model">Standard Model</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#Elementary Particles">Elementary Particles</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#Universe">Universe</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="what-we-already-know">What we already know:</h2>
+<p>In our high school, we were all taught about Ernest Rutherford, J.J Thompson, and James Chadwick, who discovered the proton, electron and neutron, respectively. Ernest Rutherford was further able to predict the structure of the atom. These were significant discoveries as they were a step up from the previously existing theoretical description of atoms. Protons, electrons, and neutrons were described as fundamental particles making up everything that the universe contains.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://www.nuclearsafety.gc.ca/images/radiation-information/atom-eng.gif" alt="YOU KNOW THIS ALREADY, DON'T YOU??!" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>YOU KNOW THIS ALREADY, DON’T YOU??!, <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="the-essence-of-being-fundamental-">The Essence of being Fundamental :</h2>
+<p>When we say that these particles, proton, neutron and electron, are fundamental, a question that pops up in mind is, “What does it mean to be truly fundamental in nature?” We can also extend the question to ask if these particles satisfy our criteria for being fundamental or if our physicist heroes were a little too cavalier to notice? Well, success is a lousy teacher. It seduces smart people into thinking they can’t be wrong. Let’s forget that we know anything and verify the facts from the basics. We know that protons and neutrons are of similar mass, and electrons have considerably lower mass than protons and neutrons. The proton has a +ve charge, the electron has a -ve charge, and the neutron is neutral. We also know that altering the arrangement of protons, electrons, and neutrons in a substance changes its identity. This is a rather compelling argument to conclusively say that protons, electrons, and neutrons are indeed the fundamental particles. 
+Our mathematics imposes no limits to how much a quantity can be divided. Strictly speaking, a continuous body can be split into halves an infinite number of times. Back when Greek philosophy was at its peak and involved questioning the very nature of things, a famous Greek philosopher, Democritus, put forward a philosophical idea called the atomic hypothesis, the first recorded theory about what constituted things. Democritus hypothesized an iron block, broke it into many smaller pieces, and claimed the point where he cannot break the block any further is where he has reached the atom. Mathematics doesn’t have any boundaries, but physics has an essence of realism and imposes constraints. For many decades physicists believed that protons, neutrons and electrons were that physical boundary they were chasing until Murray Gell-Mann and George Zweig proposed that something deeper lay inside these atoms in 1964. Although Murray and George had to bombard heavy particles at a very high speed to prove the existence of particles even more elementary than the ones at hand, we will use a simple observation to further our discussion. We previously discussed how electrons have very little mass than protons and neutrons, even though the charge on them is numerically equal. What makes protons and neutrons have considerably higher mass than an electron? Sometimes in physics, asking the right question is more important than the correct answer. I would like to break the ice and directly answer the question I posed above. Protons and neutrons fail to make the cut for being fundamental particles. They are further composed of quarks and gluons. Electrons, however, are fundamental particles, a kind called leptons. This leads us to one of the most successful theories put up by humanity describing our fundamental particles - the Standard Model.</p>
+
+<h2 id="the-standard-model-">The Standard Model :</h2>
+<p>The Standard Model can be thought of as a periodic table for the elementary particles in particle physics. The elementary particles can be divided into two main categories - fermions (further subdivided into quarks and leptons) and bosons (subdivided into scalar and vector bosons). Fermions make up most of the matter in the universe as they are the building blocks of protons. Bosons are force carriers; they are the reason particles interact with each other.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/3-standard/STM.jpg" alt="CURRENT PICTURE OF STANDARD MODEL" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>CURRENT PICTURE OF STANDARD MODEL, <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="the-true-description-of-an-atom">The True Description of an Atom:</h2>
+<p>Now that we know what the elementary particles are, we can show how they make up our atomic structure. Recapitulating, an atom is made of protons and neutrons, which make up the nucleus present at the center of the atom while electrons revolve around the nucleus. The proton and neutron are composite elementary particles, i.e., they are made up of combinations of elementary particles. The proton comprises of two up quarks and one down quark bounded by gluons, while the neutron is made of two down quarks and one up quark bounded by gluons. Electrons, as we saw before, are one of the elementary particles. Each up quark has a charge of +⅔ e, while each down quark has a charge of -⅓ e. The sum of the charges of quarks that make up a nuclear particle determines its electrical charge. Protons thus have a total charge of +1, and neutrons have zero. Leptons carry a charge of +1 e, 0 e or -1 e. Electrons are types of leptons that have a -1e charge.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">![Alt Text]https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/3-standard/smp.jpg</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>PROTON(left) NEUTRON(right), <sup id="fnref:2:1" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="the-universal-blueprint-of-matter">The Universal Blueprint of Matter:</h2>
+<p>The Standard Model is of great significance in physics because it can literally describe what everything in this universe is made up of and describe three of the four known forces in the universe, i.e., the electromagnetic force and the strong and weak forces. Electromagnetism is carried by photons and involves the interaction of electric fields and magnetic fields. The strong force, which is carried by gluons, binds together atomic nuclei to make them stable. The weak force, carried by W and Z bosons, causes nuclear reactions that have powered our Sun and other stars for billions of years. The Standard Model has the capability to answer one of the most central questions in physics, something which Albert Einstein himself died pondering, i.e. The Theory of Everything. This table encapsulates everything material in this world and how that material interacts with other matter.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://static.dw.com/image/17793646_303.jpg" alt="CERN is situated in Geneva, Switzerland. Place where new particles are bombarded at high speeds to discover new ones" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>CERN is situated in Geneva, Switzerland. Place where new particles are bombarded at high speeds to discover new ones, <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup></em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="the-limitations">The Limitations:</h2>
+<p>The standard model seeks to serve as the blueprint for all existing matter and the various fundamental forces they interact with. However, there are two hurdles that need to be crossed before the model can truly become universal. All the fundamental forces of nature have been described via the model, except the most familiar one - the force of gravity. Just like the electromagnetic field has photons as its force carriers, gravitons have been hypothesized to exist for gravitational fields. Gravitons mediate gravity’s force but are not proven because of a mathematical problem in general relativity. Apart from the existing headache of integrating gravitons into our existing model and giving way to quantum gravity, other challenges still remain. There are still a lot of fundamental particles yet to be discovered. Given that the most recent addition to our model was as recent as 2012 (the famous Higgs-Boson particle was discovered), researchers are always looking for new particles. They keep smashing high-speed particles in the hope of getting some insight into this blueprint of the universe.<br />
+However, if we assume gravitons to be true, a lot of physics problems could be solved, one of them being Quantum Gravity, which would be a big milestone in science. Many physicists believe that our understanding of Mathematics and Physics is not yet good enough to prove the existence of Gravitons, putting it into simpler terms. Humans are too dumb to solve this problem, or perhaps… there is someone among the readers who might not be!
+The other problem is that while these particles account for the visible Universe, there is a large amount of mass and energy in the Universe that visible matter simply can not explain. This has been dubbed “dark matter” and “dark energy” and none of our theories come close to explaining them. But this is a story for another time.</p>
+
+<h2 id="der-anfang-ist-die-ende-und-der-ende-ist-der-anfang-">Der anfang ist die ende und der ende ist der anfang :</h2>
+<p>In our pursuit of understanding the universe, the standard model is a huge step. The model unravels the mystery of the universe far beyond the comprehension of a layman. Particle physics is notorious for being highly mathematically rigorous. Still, in this article, I have tried to build from basic knowledge of atoms so that the same layman could appreciate the beauty of this subject the same way I do.
+The beauty of physics lies not in finding answers but in asking questions. Previously we mentioned Democritus breaking matter into infinitesimally small parts. Here is a question I would like you to ponder upon: can you break even the elementary particles that we have introduced to you? Enter STRING THEORY!!</p>
+
+<p><strong><em>The only laws you cannot disobey, are the laws of Physics</em></strong></p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>https://nuclearsafety.gc.ca/eng/resources/radiation/introduction-to-radiation/atoms-nuclides-radioisotopes.cfm <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>https://en.wikipedia.org/ <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:2:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>https://www.dw.com/en/top-five-quotes-cern-on-the-large-hadron-collider-higgs-boson-and-the-universe/a-17954569 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="bitsphyassoc/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/particle%20physics/standard%20model/elementary%20particles/universe/2021/08/02/standard-model.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>The official blog of the Physics Association of BITS Pilani</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/bitsphyassoc" title="bitsphyassoc"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.instagram.com/bits_phyassoc" title="bits_phyassoc"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#instagram"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
