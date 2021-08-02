@@ -25,14 +25,14 @@ Our mathematics imposes no limits to how much a quantity can be divided. Strictl
 ## The Standard Model :
 The Standard Model can be thought of as a periodic table for the elementary particles in particle physics. The elementary particles can be divided into two main categories - fermions (further subdivided into quarks and leptons) and bosons (subdivided into scalar and vector bosons). Fermions make up most of the matter in the universe as they are the building blocks of protons. Bosons are force carriers; they are the reason particles interact with each other. 
 
-|![CURRENT PICTURE OF STANDARD MODEL](https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/3-standard/STM.jpg) | 
+|![CURRENT PICTURE OF STANDARD MODEL](https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/3-standard/smp.jpg) | 
 |:--:| 
 | *CURRENT PICTURE OF STANDARD MODEL, [^2]* |  
 
 ## The True Description of an Atom:
 Now that we know what the elementary particles are, we can show how they make up our atomic structure. Recapitulating, an atom is made of protons and neutrons, which make up the nucleus present at the center of the atom while electrons revolve around the nucleus. The proton and neutron are composite elementary particles, i.e., they are made up of combinations of elementary particles. The proton comprises of two up quarks and one down quark bounded by gluons, while the neutron is made of two down quarks and one up quark bounded by gluons. Electrons, as we saw before, are one of the elementary particles. Each up quark has a charge of +⅔ e, while each down quark has a charge of -⅓ e. The sum of the charges of quarks that make up a nuclear particle determines its electrical charge. Protons thus have a total charge of +1, and neutrons have zero. Leptons carry a charge of +1 e, 0 e or -1 e. Electrons are types of leptons that have a -1e charge. 
 
-|![Alt Text]https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/3-standard/smp.jpg | 
+|![Proton and Neutron with quarks](https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/3-standard/pn1.png) | 
 |:--:| 
 | *PROTON(left) NEUTRON(right), [^2]* |   
 
