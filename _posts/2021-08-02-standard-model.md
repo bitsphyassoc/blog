@@ -1,6 +1,6 @@
 ---
 title: "A Primer to the Standard Model"
-description: "Let me introduce you to world of particle physics"
+description: "Let me introduce you to one of the most successful models in particle physics - The Standard Model"
 author: "Abhinav Choudhary"
 layout: post            
 toc: false              
