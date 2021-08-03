@@ -435,6 +435,8 @@ a { color: #4bbaff !important; }
 
 a:hover { color: rgba(255, 255, 255, 0.87) !important; }
 
+.social-media-list li a, .pagination li a { border: 0px; }
+
 .site-title, .site-title:visited, .site-nav, .page-link { color: rgba(255, 255, 255, 0.87) !important; }
 
 .site-nav { background-color: #121212; border-color: #333333; }
