@@ -50,6 +50,14 @@
   
 
   
+      ,"page6": {
+          "title": "The Blog Team",
+          "content": "The Authors for the Blog Articles . . Shanmugha Balan, Chief Editor | . . Abhinav Choudhary, Junior Editor | . . Suyash Kumar, Junior Editor | . . Uday Singla | .",
+          "url": "https://bitsphyassoc.github.io/blog/team/",
+          "relUrl": "/team/",
+          "date": ""
+      }
+      
   
 
   
@@ -59,7 +67,10 @@
   
 
   
-      ,"page9": {
+  
+
+  
+      ,"page10": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://bitsphyassoc.github.io/blog/robots.txt",
