@@ -6,19 +6,19 @@ permalink: /team/
 
 ## The Authors for the Blog Articles
 
-|![balan](https://bitsphyassoc.github.io/assets/images/b.jpeg) | 
+|<img src="b.jpeg" alt="drawing" style="width:350px;"/>| 
 |:--:| 
 | Shanmugha Balan, Chief Editor | 
 
-|![abhinav](https://bitsphyassoc.github.io/assets/images/abhinav.jpg) | 
+|<img src="abhinav.jpg" alt="drawing" style="width:350px;"/>| 
 |:--:| 
 | Abhinav Choudhary, Junior Editor | 
 
-|![suyash](https://bitsphyassoc.github.io/assets/images/suyash.png) | 
+|<img src="suyash.png" alt="drawing" style="width:350px;"/>| 
 |:--:| 
 | Suyash Kumar, Junior Editor | 
 
-|![uday](https://bitsphyassoc.github.io/assets/images/uday.jpg) | 
+|<img src="uday.jpg" alt="drawing" style="width:350px;"/>| 
 |:--:| 
 | Uday Singla | 
 
