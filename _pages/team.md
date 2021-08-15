@@ -10,11 +10,11 @@ permalink: /team/
 |:--:| 
 | Shanmugha Balan, Chief Editor | 
 
-|![abhinav](https://bitsphyassoc.github.io/assets/images/b.jpeg) | 
+|![abhinav](https://bitsphyassoc.github.io/assets/images/abhinav.jpg) | 
 |:--:| 
 | Abhinav Choudhary, Junior Editor | 
 
-|![suyash](https://bitsphyassoc.github.io/assets/images/b.jpeg) | 
+|![suyash](https://bitsphyassoc.github.io/assets/images/suyash.png) | 
 |:--:| 
 | Suyash Kumar, Junior Editor | 
 
