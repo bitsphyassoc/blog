@@ -28,9 +28,9 @@ url: "https://bitsphyassoc.github.io" # the base hostname & protocol for your si
 #      For example: 
 #           "" is valid
 #           "/blog"        is valid
-#            "/blog/site/" is invalid  ( / at the end)
-#            "/blog/site"  is valid
-#            "blog/site"   is invalid  ( because doesn't begin with a /)
+#           "/blog/site/" is invalid  ( / at the end)
+#           "/blog/site"  is valid
+#           "blog/site"   is invalid  ( because doesn't begin with a /)
 #
 # 3. You must replace the parameter `baseurl` in _action_files/settings.ini with the same value as you set here but WITHOUT QUOTES.
 #
@@ -83,7 +83,6 @@ html_escape:
 future: true
 theme: minima
 plugins:
-  - jekyll-feed
   - jekyll-gist
   - jekyll-octicons
   - jekyll-toc
