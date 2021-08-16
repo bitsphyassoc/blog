@@ -41,8 +41,8 @@
       ,"page1": {
           "title": "Home",
           "content": "",
-          "url": "https://bitsphyassoc.github.io/blog/site.url",
-          "relUrl": "/site.url",
+          "url": "https://bitsphyassoc.github.io/blog/_pages/home.html",
+          "relUrl": "/_pages/home.html",
           "date": ""
       }
       
