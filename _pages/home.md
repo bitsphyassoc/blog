@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: external
 title: Home
-permalink: site.url
+external_url: https://bitsphyassoc.github.io/
 ---
