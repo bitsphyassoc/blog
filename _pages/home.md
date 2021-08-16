@@ -1,5 +1,5 @@
 ---
 layout: page
 title: Home
-permalink: {{site.url}}
+permalink: site.url
 ---
