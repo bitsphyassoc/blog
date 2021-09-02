@@ -69,7 +69,7 @@ The state $ \vert 0‚ü© $ is naturally a lower energy state than state $ \vert 1‚
 
 More realistically, when the environment is at temperatures above absolute zero, the qubit emits energy to the environment and also absorbs some energy from the environment. In this case, the Bloch Sphere recedes to a point P of minimum energy inside it. This is termed spontaneous emission + thermalization.
 
-|![receeding](https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/image4.png) | 
+|![receeding](https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/image4.jpg) | 
 |:--:| 
 | *Receeding Bloch Sphere* | 
 
