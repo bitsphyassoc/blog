@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Errors and Error Correction in the Quantum World | Physics Association, BITS Pilani - BLOG</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Errors and Error Correction in the Quantum World" />
+<meta name="author" content="Uday Singla" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Quantum Computers offer a robust model of computing based on the laws of quantum mechanics. However, real-world quantum computers are hard to build. Curious to know more? Read on to learn about some sources of quantum errors and ways to overcome them." />
+<meta property="og:description" content="Quantum Computers offer a robust model of computing based on the laws of quantum mechanics. However, real-world quantum computers are hard to build. Curious to know more? Read on to learn about some sources of quantum errors and ways to overcome them." />
+<link rel="canonical" href="https://bitsphyassoc.github.io/blog/quantum%20computation/errors/bloch%20sphere/2021/08/17/quantum-error.html" />
+<meta property="og:url" content="https://bitsphyassoc.github.io/blog/quantum%20computation/errors/bloch%20sphere/2021/08/17/quantum-error.html" />
+<meta property="og:site_name" content="Physics Association, BITS Pilani - BLOG" />
+<meta property="og:image" content="https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/title.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-17T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://bitsphyassoc.github.io/blog/quantum%20computation/errors/bloch%20sphere/2021/08/17/quantum-error.html","@type":"BlogPosting","headline":"Errors and Error Correction in the Quantum World","dateModified":"2021-08-17T00:00:00-05:00","datePublished":"2021-08-17T00:00:00-05:00","image":"https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/title.jpeg","author":{"@type":"Person","name":"Uday Singla"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bitsphyassoc.github.io/blog/quantum%20computation/errors/bloch%20sphere/2021/08/17/quantum-error.html"},"description":"Quantum Computers offer a robust model of computing based on the laws of quantum mechanics. However, real-world quantum computers are hard to build. Curious to know more? Read on to learn about some sources of quantum errors and ways to overcome them.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://bitsphyassoc.github.io/blog/feed.xml" title="Physics Association, BITS Pilani - BLOG" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">Physics Association, BITS Pilani - BLOG</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/_pages/home.html">Home</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a><a class="page-link" href="/blog/team/">The Blog Team</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Errors and Error Correction in the Quantum World</h1><p class="page-description">Quantum Computers offer a robust model of computing based on the laws of quantum mechanics. However, real-world quantum computers are hard to build. Curious to know more? Read on to learn about some sources of quantum errors and ways to overcome them.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-17T00:00:00-05:00" itemprop="datePublished">
+        Aug 17, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Uday Singla</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      12 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#Quantum Computation">Quantum Computation</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#Errors">Errors</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#Bloch Sphere">Bloch Sphere</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>To err is human. Sadly, computers do that too. Classical computers play around with a multitude of bits at any point in time. It is not hard for a noisy environment to flip random bits here and there. A single bit flip can lead to a tsunami of errors in calculations; multiple bit flips can be devastating. Fortunately, modern-day computers handle these errors quite well, and we have elegant <strong>error-correcting codes</strong> (ECCs) at hand. <strong>Redundancy</strong> is at the heart of such error-correcting codes. Let us see how:</p>
+
+<p>A crude way of detecting and correcting bit-flip errors is to encode $ [0, 1] $ as $ [000, 111] $. We have created multiple copies of the same bit. Here, 3 bits constitute one <strong>logical bit</strong> or <strong>codeword</strong>. Any single bit flip can now be easily corrected by selecting the value of the majority of the bits. Let’s say our data is the binary sequence $ 0 1 0 $. It can be encoded as $ 000\ 111\ 000 $. Now, even if some random bits flip due to errors, $ 010\ 110\ 100 $, we can always correct the errors by choosing the value of the majority of the bits, taken in threes. $ 010 $ is corrected to $ 000 $, $ 110 $ to $ 111 $ and $ 100 $ to $ 000 $. Therefore, $ 010\ 110\ 100 $ is corrected to $ 000\ 111\ 000 $, which can be decoded back to $ 0 1 0 $, the original binary sequence.</p>
+
+<h2 id="the-quantum-realm">The Quantum Realm</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Things get pretty tricky as we enter the quantum realm. It is essential to understand what a qubit is, in order to understand quantum errors. A <strong>qubit</strong> (short for quantum-bit) is a two-level quantum system used as a basic unit of information in quantum computing. The state of a qubit is represented by vectors (or wave functions). A qubit can have states $</td>
+      <td>0⟩ $ and $</td>
+      <td>1⟩ $ (analogous to 0 and 1 in classical bits). The brackets around $</td>
+      <td>0⟩ $ and $</td>
+      <td>1⟩ $ are a fancy way of representing vectors in a notation called the Dirac notation. The symbol $</td>
+      <td>ψ⟩ $ is generally used to represent the state of a qubit.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Two interesting phenomena that set the qubits apart from classical bits are superposition and entanglement. <strong>Superposition</strong> allows a qubit to achieve states which are a linear combination of $</td>
+      <td>0⟩ $ and $</td>
+      <td>1⟩ $, i.e. $ c_1</td>
+      <td>0⟩+ c_2</td>
+      <td>1⟩ $ (where $ c_1, c_2 $ are complex numbers and  $</td>
+      <td>c_1</td>
+      <td>^2+</td>
+      <td>c_2</td>
+      <td>^2 = 1 $). A qubit can therefore choose from an infinite set of states, taking arbitrary values of $ c_1 $ and $ c_2 $. <strong>Entanglement</strong> is the name given to a strong correlation that can exist between two or more qubits. It is amusingly called “spooky action at a distance” since the correlation is independent of the separation between the qubits. Both superposition and entanglement are essential tools in many quantum algorithms. Geometrically, a qubit is neatly represented as a point on (or inside, but that’s a topic for another day) a special unit sphere known as the Bloch Sphere:</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://linhkientrungquoc.vn/public/upload/images/qua-cau-bloch.png" alt="Bloch sphere" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>The Bloch Sphere visualized, <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></em></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>The state of the qubit is re-parameterized in terms of $ θ $ and $ φ $ to fit on the Bloch Sphere.  $$</td>
+      <td>ψ⟩= e^{iγ} (\cos{\dfrac{θ}{2}}</td>
+      <td>0⟩+ e^{iφ} \sin{\dfrac{θ}{2}}</td>
+      <td>1⟩) $$ $ e^{iγ} $ represents the global phase factor and has no effect on the Bloch Sphere representation of the qubit.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="errors">Errors</h2>
+
+<p>All quantum algorithms are developed considering qubits to be perfectly isolated from the environment. However, a perfectly isolated quantum system is realistically impossible to achieve. We strive to achieve near-perfection, but the system essentially remains an open system. Open quantum systems <strong>interact with the environment</strong> and exchange energy. This interaction is the root cause of quantum errors.  The Hamiltonian of the interaction decides the type of error that occurs. A <strong>Hamiltonian</strong> is nothing but an operator that describes the energy of the quantum system.</p>
+
+<p>An easy way to look at quantum errors is in the form of <strong>deformities of the Bloch Sphere</strong>. The type of deformation depends on the Hamiltonian of the interaction. Let us look at some single qubit errors:</p>
+
+<h3 id="phase-flip-error">Phase-flip error</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>We represented a qubit as $$</td>
+      <td>ψ⟩= e^{iγ} (\cos{\dfrac{θ}{2}}</td>
+      <td>0⟩+ e^{iφ} \sin{\dfrac{θ}{2}}</td>
+      <td>1⟩) $$ The term $ e^{iγ} $ is called the global phase of the qubit. A qubit is represented by the same point on the Bloch Sphere, irrespective of the global phase. However, when the qubit is in a superposition, the relative phases of different states cannot be ignored. For example,   a qubit in state $ -</td>
+      <td>1⟩ $ is indistinguishable from a qubit in state $</td>
+      <td>1⟩ $. However, a qubit in a superposition $$</td>
+      <td>+⟩ = \dfrac{1}{\sqrt{2}} (</td>
+      <td>0⟩ +</td>
+      <td>1⟩) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mi>s</mi><mi>d</mi><mi>i</mi><mi>f</mi><mi>f</mi><mi>e</mi><mi>r</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>f</mi><mi>r</mi><mi>o</mi><mi>m</mi><mtext> </mtext></mrow><annotation encoding="application/x-tex">is different from  </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord mathdefault">d</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">o</span><span class="mord mathdefault">m</span><span class="mord"> </span></span></span></span></td>
+      <td>-⟩ = \dfrac{1}{\sqrt{2}} (</td>
+      <td>0⟩ -</td>
+      <td>1⟩) $$ $</td>
+      <td>+⟩ $ is represented along the positive $ X $ axis, whereas $</td>
+      <td>-⟩ $ is represented along the negative $ X $ axis. <strong>The phase-flip error is similar to applying a $ Z $ gate on the qubits</strong>. A $ Z $ gate changes a qubit state $</td>
+      <td>1⟩ $ to $ -</td>
+      <td>1⟩ $ but it has no effect on the state $</td>
+      <td>0⟩ $. Therefore, under a phase-flip error, a qubit starting in state $$ c_1</td>
+      <td>0⟩ + c_2</td>
+      <td>1⟩ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>t</mi><mi>a</mi><mi>r</mi><mi>t</mi><mi>s</mi><mi>o</mi><mi>s</mi><mi>c</mi><mi>i</mi><mi>l</mi><mi>l</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>b</mi><mi>e</mi><mi>t</mi><mi>w</mi><mi>e</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>s</mi><mi>t</mi><mi>a</mi><mi>t</mi><mi>e</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">starts oscillating between the states</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">t</span><span class="mord mathdefault">s</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">c</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">b</span><span class="mord mathdefault">e</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">e</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span></span></span></span> c_1</td>
+      <td>0⟩ + c_2</td>
+      <td>1⟩ \text{ and } c_1</td>
+      <td>0⟩ - c_2</td>
+      <td>1⟩ $$ On an average, it can be visualized as the shrinking of the $ XY $ plane of the Bloch Sphere:</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/image1.jpg" alt="phase" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Phase Flip Error</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="bit-flip-error">Bit-flip error</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>A bit flip error is an error in which the state $</td>
+      <td>0⟩ $ of the qubit is flipped to $</td>
+      <td>1⟩ $ and vice-versa. <strong>The error can be simulated by the application of a X gate on the qubits.</strong> Thus, a qubit starting in the state $$ c_1</td>
+      <td>0⟩ + c_2</td>
+      <td>1⟩ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>t</mi><mi>a</mi><mi>r</mi><mi>t</mi><mi>s</mi><mi>o</mi><mi>s</mi><mi>c</mi><mi>i</mi><mi>l</mi><mi>l</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>b</mi><mi>e</mi><mi>t</mi><mi>w</mi><mi>e</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>s</mi><mi>t</mi><mi>a</mi><mi>t</mi><mi>e</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">starts oscillating between the states</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">t</span><span class="mord mathdefault">s</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">c</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">b</span><span class="mord mathdefault">e</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">e</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span></span></span></span> c_1</td>
+      <td>0⟩ + c_2</td>
+      <td>1⟩ \text{ and } c_1</td>
+      <td>1⟩ + c_2</td>
+      <td>0⟩ $$ On an average, it can be visualized as the shrinking of the $ YZ $ plane of the Bloch Sphere.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="bit-phase-flip-error">Bit-phase flip error</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>A bit-phase flip error combines bit-flip and phase-flip errors and can be seen as <strong>applying a $ Y $ gate on the qubits</strong>. $ Y $ gate changes a qubit in state $</td>
+      <td>0⟩ $ to state $ i</td>
+      <td>1⟩ $ and a qubit in state $</td>
+      <td>1⟩ $ to state $ -i</td>
+      <td>0⟩$ . Thus, a qubit starting in the state $$ c_1</td>
+      <td>0⟩ + c_</td>
+      <td>1⟩ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>t</mi><mi>a</mi><mi>r</mi><mi>t</mi><mi>s</mi><mi>o</mi><mi>s</mi><mi>c</mi><mi>i</mi><mi>l</mi><mi>l</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi>b</mi><mi>e</mi><mi>t</mi><mi>w</mi><mi>e</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>s</mi><mi>t</mi><mi>a</mi><mi>t</mi><mi>e</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">starts oscillating between the states</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">t</span><span class="mord mathdefault">s</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">c</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">b</span><span class="mord mathdefault">e</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">e</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span></span></span></span> c_1</td>
+      <td>0⟩ + c_2</td>
+      <td>1⟩ \text{ and } ic_1</td>
+      <td>1⟩ - ic_2</td>
+      <td>0⟩ $$ On an average, it can be visualized as the shrinking of the $ XZ $ plane of the Bloch Sphere.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="depolarization">Depolarization</h3>
+
+<p>In depolarization, there is uniform shrinking of the Bloch Sphere. Eventually, the state shrinks to a point at the center of the Bloch Sphere, and all information is lost.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/image2.jpg" alt="depolarization" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Depolarization</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="spontaneous-emission">Spontaneous emission</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>The state $</td>
+      <td>0⟩ $ is naturally a lower energy state than state $</td>
+      <td>1⟩ $. In spontaneous emission, the qubit emits energy to the environment and slowly recedes towards the lower energy state $</td>
+      <td>0⟩ $. This happens when the environment is at absolute zero, such that the qubit only emits energy to the environment and no energy is absorbed from the environment.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/image3.jpg" alt="spontaneous" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Spontaneous Emission</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="spontaneous-emission--thermalization">Spontaneous emission + thermalization</h3>
+
+<p>More realistically, when the environment is at temperatures above absolute zero, the qubit emits energy to the environment and also absorbs some energy from the environment. In this case, the Bloch Sphere recedes to a point P of minimum energy inside it. This is termed spontaneous emission + thermalization.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/image4.png" alt="receeding" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Receeding Bloch Sphere</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="challenges-in-error-correction">Challenges in Error Correction</h2>
+
+<h3 id="continuum-of-errors">Continuum of errors</h3>
+
+<p>Intuitively, any slight nudge to the state of a qubit represented on the Bloch Sphere can be characterized as a quantum error. A correct state of a qubit has <strong>infinite possibilities to choose from in the error subspace</strong>. We have to deal with a continuum of quantum errors!</p>
+
+<h3 id="no-cloning-theorem">No-Cloning Theorem</h3>
+
+<p>Remember how we talked about redundancy being at the heart of classical error-correcting codes? Things get spicy in the quantum realm, thanks to the no-cloning theorem. The no-cloning states that it is <strong>impossible to create an independent and identical copy of an arbitrary unknown qubit state</strong>. We have to come up with ways to create redundancy without cloning the state of a qubit!</p>
+
+<h3 id="the-collapse-of-the-wavefunction">The collapse of the wavefunction</h3>
+
+<p>The measurement postulate of quantum mechanics states that the state of a qubit collapses upon measurement. This translates to the <strong>destruction of the qubit</strong>, and hence information, once a qubit is measured. We have to develop ways to look for errors and correct them without measuring the qubit!</p>
+
+<h2 id="overcoming-the-challenges">Overcoming the Challenges</h2>
+
+<p>The proposed challenges might make it look impossible to design error-correcting codes for quantum systems. However, humans are smart. We have some neat tricks to overcome the proposed challenges. Understanding the following section requires some background knowledge about qubits, quantum gates, and quantum circuits.</p>
+
+<h3 id="digitization-of-errors">Digitization of errors</h3>
+
+<p>An open quantum system evolves according to the following equation: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mrow><mi>n</mi><mi>e</mi><mi>w</mi></mrow></msub><mo>=</mo><mo>∑</mo><mo stretchy="false">(</mo><msub><mi>K</mi><mi>α</mi></msub><mtext> </mtext><msub><mi>ρ</mi><mrow><mi>o</mi><mi>l</mi><mi>d</mi></mrow></msub><mtext> </mtext><msubsup><mi>K</mi><mi>α</mi><mo lspace="0em" rspace="0em">†</mo></msubsup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">ρ_{new} = \sum (K_{\alpha} \ ρ_{old} \ K^{\dagger}_{\alpha})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">ρ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight" style="margin-right:0.02691em;">w</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.0991179999999998em;vertical-align:-0.25001em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.0037em;">α</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace"> </span><span class="mord"><span class="mord mathdefault">ρ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace"> </span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8491079999999999em;"><span style="top:-2.4530000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.0037em;">α</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">†</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>
+$ ρ $ is the density operator, which is an alternate way of representing the state of a qubit. $ K_{\alpha} $ is the Kraus operator that satisfies the property: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mo stretchy="false">(</mo><msub><mi>K</mi><mi>α</mi></msub><mtext> </mtext><msubsup><mi>K</mi><mi>α</mi><mo lspace="0em" rspace="0em">†</mo></msubsup><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sum (K_{\alpha}\ K^{\dagger}_{\alpha}) = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0991179999999998em;vertical-align:-0.25001em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.0037em;">α</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace"> </span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8491079999999999em;"><span style="top:-2.4530000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.0037em;">α</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">†</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>
+Each state that is a part of the density operator ρ evolves as follows: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>ψ</mi><msub><mo stretchy="false">⟩</mo><mrow><mi>n</mi><mi>e</mi><mi>w</mi></mrow></msub><mo>=</mo><msub><mi>K</mi><mi>α</mi></msub><mi mathvariant="normal">∣</mi><mi>ψ</mi><msub><mo stretchy="false">⟩</mo><mrow><mi>o</mi><mi>l</mi><mi>d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">|ψ⟩_{new} = K_{\alpha} |ψ⟩_{old}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.03588em;">ψ</span><span class="mclose"><span class="mclose">⟩</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight" style="margin-right:0.02691em;">w</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.0037em;">α</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.03588em;">ψ</span><span class="mclose"><span class="mclose">⟩</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>
+$ K_{\alpha} $ can be represented as a $ 2 $  x $ 2 $ complex matrix. The identity matrix and the Pauli matrices : <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>I</mi><mo>^</mo></mover><mo separator="true">,</mo><mover accent="true"><msub><mi>σ</mi><mi>x</mi></msub><mo>^</mo></mover><mo separator="true">,</mo><mover accent="true"><msub><mi>σ</mi><mi>y</mi></msub><mo>^</mo></mover><mo separator="true">,</mo><mover accent="true"><msub><mi>σ</mi><mi>z</mi></msub><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">{\hat{I}, \hat{σ_x}, \hat{σ_y}, \hat{σ_z}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.232878em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9467699999999999em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">I</span></span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.13889em;">^</span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> form the basis for $ 2 $ x $ 2 $ complex matrices over complex numbers.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/image5.png" alt="matrices" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Pauli spin matrices</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The Kraus operator can be expressed in terms of the basis matrices as:</p>
+
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>α</mi></msub><mo>=</mo><msub><mi>α</mi><mi>i</mi></msub><mover accent="true"><mi>I</mi><mo>^</mo></mover><mo>+</mo><msub><mi>α</mi><mi>x</mi></msub><mover accent="true"><msub><mi>σ</mi><mi>x</mi></msub><mo>^</mo></mover><mo separator="true">,</mo><mo>+</mo><msub><mi>α</mi><mi>y</mi></msub><mover accent="true"><msub><mi>σ</mi><mi>y</mi></msub><mo>^</mo></mover><mo separator="true">,</mo><mo>+</mo><msub><mi>α</mi><mi>z</mi></msub><mover accent="true"><msub><mi>σ</mi><mi>z</mi></msub><mo>^</mo></mover><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">K_{\alpha} = \alpha_i\hat{I} +\alpha_x\hat{σ_x}, +\alpha_y\hat{σ_y}, +\alpha_z\hat{σ_z},</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.0037em;">α</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.0967699999999998em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9467699999999999em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">I</span></span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.13889em;">^</span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">+</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">+</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mpunct">,</span></span></span></span> where $ \alpha_i $, $ \alpha_x $, $ \alpha_y $ and $ \alpha_z $ are arbitrary complex numbers. An interesting property of the Pauli matrices is that $ i\hat{σ_x}\hat{σ_z} = \hat{σ_y} $. Therefore, the Kraus operator can be reformulated as <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>α</mi></msub><mo>=</mo><msub><mi>α</mi><mi>i</mi></msub><mover accent="true"><mi>I</mi><mo>^</mo></mover><mo>+</mo><msub><mi>α</mi><mi>x</mi></msub><mover accent="true"><msub><mi>σ</mi><mi>x</mi></msub><mo>^</mo></mover><mo separator="true">,</mo><mo>+</mo><msub><mi>α</mi><mi>y</mi></msub><mi>i</mi><mover accent="true"><msub><mi>σ</mi><mi>x</mi></msub><mo>^</mo></mover><mover accent="true"><msub><mi>σ</mi><mi>z</mi></msub><mo>^</mo></mover><mo separator="true">,</mo><mo>+</mo><msub><mi>α</mi><mi>z</mi></msub><mover accent="true"><msub><mi>σ</mi><mi>z</mi></msub><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">K_{\alpha} = \alpha_i\hat{I} +\alpha_x\hat{σ_x}, +\alpha_y i\hat{σ_x}\hat{σ_z}, +\alpha_z\hat{σ_z}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.0037em;">α</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.0967699999999998em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9467699999999999em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">I</span></span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.13889em;">^</span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">+</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mord mathdefault">i</span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">+</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;">^</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span>. <strong>The beauty of this reformulation is that we have mapped general noise to discrete Pauli errors using a bit of mathematics.</strong> We have to correct only Pauli X and Pauli Z errors.  We have immensely narrowed down the class of errors that we have to deal with. We no longer have to address the continuum of errors.</p>
+
+<h3 id="entanglement-for-redundancy">Entanglement for redundancy</h3>
+
+<p>The no-cloning prevents us from creating exact independent copies of an arbitrary unknown state, but we can create redundancies using the power of <strong>entanglement</strong>. We can easily create an entanglement using the C-NOT gates as shown:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/image6.png" alt="gates" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>C-NOT gates</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Here, if $ q_0 = c_1</td>
+      <td>0⟩+ c_2</td>
+      <td>1⟩ $, $ q_1 =</td>
+      <td>0⟩ $ and $ q_2=</td>
+      <td>0⟩ $, the outcome of the circuit is simply $ c_1</td>
+      <td>000⟩+ c_2</td>
+      <td>111⟩ $. Voila! <strong>We have achieved redundancy without violating the no-cloning theorem here.</strong> Cloning a state $ c_1</td>
+      <td>0⟩+ c_2</td>
+      <td>1⟩ $ would mean creating three independent copies of it. What we have created is an entanglement of three qubits, due to which the three qubits are dependent on each other. However, these entangled qubits are good enough for our purpose.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="projective-measurements">Projective measurements</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>When a qubit $ c_1</td>
+      <td>0⟩+ c_2</td>
+      <td>1⟩ $ is encoded to $ c_1</td>
+      <td>000⟩+ c_2</td>
+      <td>111⟩ $, we have expanded the state space of qubits from a <strong>2-dimensional state space</strong> to an <strong>8-dimensional state space</strong>. The 8-dimensional state can be thought of to be composed of a logical qubit subspace with {</td>
+      <td>000⟩,</td>
+      <td>111⟩} as the basis and an error subspace with {</td>
+      <td>001⟩,</td>
+      <td>010⟩,</td>
+      <td>011⟩,</td>
+      <td>100⟩,</td>
+      <td>101⟩,</td>
+      <td>110⟩} as the basis. <strong>A correct qubit always resides in the logical qubit subspace.  It is only when errors occur that the qubit goes to the error subspace.</strong> For example, a correct qubit $ c_1</td>
+      <td>000⟩+ c_2</td>
+      <td>111⟩ $ in the logical qubit subspace may be changed to $ c_1</td>
+      <td>010⟩+ c_2</td>
+      <td>110⟩ $ due to errors, thereby entering the error subspace.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/image7.jpg" alt="subspaces" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Logical Qubit subspace and error subspace</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To avoid the destruction of the state of the qubits due to measurement, we make use of an extra qubit called an ancillary qubit. <strong>We measure only the ancillary qubit, leaving the other qubits undisturbed.</strong> We model the quantum circuit such that the measurements of the ancillary qubit help to detect whether our qubits are in the logical qubit subspace or the error subspace.</p>
+
+<h2 id="the-quantum-threshold-theorem">The Quantum Threshold Theorem</h2>
+
+<p>The quantum threshold theorem says that a quantum computer with a physical error rate below a certain threshold can, through application of quantum error correcting schemes, suppress the logical error rate to arbitrarily low levels. 
+There was a time when it was considered unrealistic to create real world quantum computers due to the challenges posed by quantum errors. However, using the techniques described above as the foundation, elegant error correcting codes have been proposed to detect and correct quantum errors. <strong>Shor’s 9 qubit code</strong> is a remarkable checkpoint in quantum error correction. It uses nine qubits to encode one logical qubit and is able to correct phase-flip, bit-flip and bit-phase flip errors! Quantum error correction is an active area of research that re-establishes our faith in the creation of feasible quantum computers in the near future.</p>
+
+<h2 id="suggested-reading">Suggested Reading</h2>
+
+<ol>
+  <li>
+    <p>Quantum Error Correction for Beginners Devitt, S. J., Munro, W. J., &amp; Nemoto, K. (2013). Quantum error correction for beginners. <em>Reports on Progress in Physics</em>, 76(7), 076001. <a href="https://doi.org/10.1088/0034-4885/76/7/076001">https://doi.org/10.1088/0034-4885/76/7/076001</a></p>
+  </li>
+  <li>
+    <p>Quantum Error Correction (Chapter 10)Nielsen, M. A., &amp; Chuang, I. L. (2011). <em>Quantum Computation and Quantum Information: 10th Anniversary Edition</em>. Cambridge University Press.</p>
+  </li>
+</ol>
+
+<h3 id="footnotes">Footnotes</h3>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>https://linhkientrungquoc.vn/public/upload/images/qua-cau-bloch.png <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="bitsphyassoc/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/quantum%20computation/errors/bloch%20sphere/2021/08/17/quantum-error.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+    <data class="u-url" href="/blog/"></data>
+  
+    <div class="wrapper">
+  
+      <div class="footer-col-wrapper">
+        <div class="footer-col">
+          <p>The official blog of the Physics Association of BITS Pilani  -  Please subscribe to our <a href="https://docs.google.com/forms/d/e/1FAIpQLSe_VXRqXRLUHVhrIhFM7MggZ7ppC2aTzM5PYuZel9nQ9Xxntw/viewform?usp=sf_link">Mailing List</a></p>
+        </div>
+      </div>
+
+      <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://www.facebook.com/Physics.Association.BITSPilani" title="Physics.Association.BITSPilani"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#facebook"></use></svg></a></li><li><a rel="me" href="https://github.com/bitsphyassoc" title="bitsphyassoc"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.instagram.com/bits_phyassoc" title="bits_phyassoc"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#instagram"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/company/phyassoc" title="phyassoc"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://www.youtube.com/channel/UCh81x2kZQHc64xVwWAmCKWQ" title="YouTube"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#youtube"></use></svg></a></li></ul></div>
+  
+    </div>
+  
+  </footer></body>
+
+</html>
