@@ -17,15 +17,15 @@ A crude way of detecting and correcting bit-flip errors is to encode $ [0, 1] $ 
 
 ## The Quantum Realm
 
-Things get pretty tricky as we enter the quantum realm. It is essential to understand what a qubit is, in order to understand quantum errors. A **qubit** (short for quantum-bit) is a two-level quantum system used as a basic unit of information in quantum computing. The state of a qubit is represented by vectors (or wave functions). A qubit can have states $ |0⟩ $ and $ |1⟩ $ (analogous to 0 and 1 in classical bits). The brackets around $ |0⟩ $ and $ |1⟩ $ are a fancy way of representing vectors in a notation called the Dirac notation. The symbol $ |ψ⟩ $ is generally used to represent the state of a qubit.
+Things get pretty tricky as we enter the quantum realm. It is essential to understand what a qubit is, in order to understand quantum errors. A **qubit** (short for quantum-bit) is a two-level quantum system used as a basic unit of information in quantum computing. The state of a qubit is represented by vectors (or wave functions). A qubit can have states $ \vert 0⟩ $ and $ \vert 1⟩ $ (analogous to 0 and 1 in classical bits). The brackets around $ \vert 0⟩ $ and $ \vert 1⟩ $ are a fancy way of representing vectors in a notation called the Dirac notation. The symbol $ \vert ψ⟩ $ is generally used to represent the state of a qubit.
 
-Two interesting phenomena that set the qubits apart from classical bits are superposition and entanglement. **Superposition** allows a qubit to achieve states which are a linear combination of $ |0⟩ $ and $ |1⟩ $, i.e. $ c_1|0⟩+ c_2|1⟩ $ (where $ c_1, c_2 $ are complex numbers and  $ |c_1|^2+ |c_2|^2 = 1 $). A qubit can therefore choose from an infinite set of states, taking arbitrary values of $ c_1 $ and $ c_2 $. **Entanglement** is the name given to a strong correlation that can exist between two or more qubits. It is amusingly called “spooky action at a distance” since the correlation is independent of the separation between the qubits. Both superposition and entanglement are essential tools in many quantum algorithms. Geometrically, a qubit is neatly represented as a point on (or inside, but that’s a topic for another day) a special unit sphere known as the Bloch Sphere:
+Two interesting phenomena that set the qubits apart from classical bits are superposition and entanglement. **Superposition** allows a qubit to achieve states which are a linear combination of $ \vert 0⟩ $ and $ \vert 1⟩ $, i.e. $ c_1\vert 0⟩+ c_2\vert 1⟩ $ (where $ c_1, c_2 $ are complex numbers and  $ \vert c_1\vert ^2+ \vert c_2\vert ^2 = 1 $). A qubit can therefore choose from an infinite set of states, taking arbitrary values of $ c_1 $ and $ c_2 $. **Entanglement** is the name given to a strong correlation that can exist between two or more qubits. It is amusingly called “spooky action at a distance” since the correlation is independent of the separation between the qubits. Both superposition and entanglement are essential tools in many quantum algorithms. Geometrically, a qubit is neatly represented as a point on (or inside, but that’s a topic for another day) a special unit sphere known as the Bloch Sphere:
 
 |![Bloch sphere](https://linhkientrungquoc.vn/public/upload/images/qua-cau-bloch.png) | 
 |:--:| 
 | *The Bloch Sphere visualized, [^1]* | 
 
-The state of the qubit is re-parameterized in terms of $ θ $ and $ φ $ to fit on the Bloch Sphere.  $$ |ψ⟩= e^{iγ} (\cos{\dfrac{θ}{2}} |0⟩+ e^{iφ} \sin{\dfrac{θ}{2}} |1⟩) $$ $ e^{iγ} $ represents the global phase factor and has no effect on the Bloch Sphere representation of the qubit.
+The state of the qubit is re-parameterized in terms of $ θ $ and $ φ $ to fit on the Bloch Sphere.  $$ \vert ψ⟩= e^{iγ} (\cos{\dfrac{θ}{2}} \vert 0⟩+ e^{iφ} \sin{\dfrac{θ}{2}} \vert 1⟩) $$ $ e^{iγ} $ represents the global phase factor and has no effect on the Bloch Sphere representation of the qubit.
 
 ## Errors
 
@@ -35,7 +35,7 @@ An easy way to look at quantum errors is in the form of **deformities of the Blo
 
 ### Phase-flip error
 
-We represented a qubit as $$ |ψ⟩= e^{iγ} (\cos{\dfrac{θ}{2}} |0⟩+ e^{iφ} \sin{\dfrac{θ}{2}} |1⟩) $$ The term $ e^{iγ} $ is called the global phase of the qubit. A qubit is represented by the same point on the Bloch Sphere, irrespective of the global phase. However, when the qubit is in a superposition, the relative phases of different states cannot be ignored. For example,   a qubit in state $ -|1⟩ $ is indistinguishable from a qubit in state $ |1⟩ $. However, a qubit in a superposition $$ |+⟩ = \dfrac{1}{\sqrt{2}} (|0⟩ + |1⟩) $$ is different from   $$ |-⟩ = \dfrac{1}{\sqrt{2}} (|0⟩ - |1⟩) $$ $ |+⟩ $ is represented along the positive $ X $ axis, whereas $ |-⟩ $ is represented along the negative $ X $ axis. **The phase-flip error is similar to applying a $ Z $ gate on the qubits**. A $ Z $ gate changes a qubit state $ |1⟩ $ to $ -|1⟩ $ but it has no effect on the state $ |0⟩ $. Therefore, under a phase-flip error, a qubit starting in state $$ c_1|0⟩ + c_2|1⟩ $$ starts oscillating between the states $$ c_1|0⟩ + c_2|1⟩ \text{ and } c_1|0⟩ - c_2|1⟩ $$ On an average, it can be visualized as the shrinking of the $ XY $ plane of the Bloch Sphere:
+We represented a qubit as $$ \vert ψ⟩= e^{iγ} (\cos{\dfrac{θ}{2}} \vert 0⟩+ e^{iφ} \sin{\dfrac{θ}{2}} \vert 1⟩) $$ The term $ e^{iγ} $ is called the global phase of the qubit. A qubit is represented by the same point on the Bloch Sphere, irrespective of the global phase. However, when the qubit is in a superposition, the relative phases of different states cannot be ignored. For example,   a qubit in state $ -\vert 1⟩ $ is indistinguishable from a qubit in state $ \vert 1⟩ $. However, a qubit in a superposition $$ \vert +⟩ = \dfrac{1}{\sqrt{2}} (\vert 0⟩ + \vert 1⟩) $$ is different from   $$ \vert -⟩ = \dfrac{1}{\sqrt{2}} (\vert 0⟩ - \vert 1⟩) $$ $ \vert +⟩ $ is represented along the positive $ X $ axis, whereas $ \vert -⟩ $ is represented along the negative $ X $ axis. **The phase-flip error is similar to applying a $ Z $ gate on the qubits**. A $ Z $ gate changes a qubit state $ \vert 1⟩ $ to $ -\vert 1⟩ $ but it has no effect on the state $ \vert 0⟩ $. Therefore, under a phase-flip error, a qubit starting in state $$ c_1\vert 0⟩ + c_2\vert 1⟩ $$ starts oscillating between the states $$ c_1\vert 0⟩ + c_2\vert 1⟩ \text{ and } c_1\vert 0⟩ - c_2\vert 1⟩ $$ On an average, it can be visualized as the shrinking of the $ XY $ plane of the Bloch Sphere:
 
 |![phase](https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/image1.jpg) | 
 |:--:| 
@@ -43,11 +43,11 @@ We represented a qubit as $$ |ψ⟩= e^{iγ} (\cos{\dfrac{θ}{2}} |0⟩+ e^{iφ}
 
 ### Bit-flip error 
 
-A bit flip error is an error in which the state $ |0⟩ $ of the qubit is flipped to $ |1⟩ $ and vice-versa. **The error can be simulated by the application of a X gate on the qubits.** Thus, a qubit starting in the state $$ c_1|0⟩ + c_2|1⟩ $$ starts oscillating between the states $$ c_1|0⟩ + c_2|1⟩ \text{ and } c_1|1⟩ + c_2|0⟩ $$ On an average, it can be visualized as the shrinking of the $ YZ $ plane of the Bloch Sphere.
+A bit flip error is an error in which the state $ \vert 0⟩ $ of the qubit is flipped to $ \vert 1⟩ $ and vice-versa. **The error can be simulated by the application of a X gate on the qubits.** Thus, a qubit starting in the state $$ c_1\vert 0⟩ + c_2\vert 1⟩ $$ starts oscillating between the states $$ c_1\vert 0⟩ + c_2\vert 1⟩ \text{ and } c_1\vert 1⟩ + c_2\vert 0⟩ $$ On an average, it can be visualized as the shrinking of the $ YZ $ plane of the Bloch Sphere.
 
 ### Bit-phase flip error
 
-A bit-phase flip error combines bit-flip and phase-flip errors and can be seen as **applying a $ Y $ gate on the qubits**. $ Y $ gate changes a qubit in state $ |0⟩ $ to state $ i|1⟩ $ and a qubit in state $ |1⟩ $ to state $ -i|0⟩$ . Thus, a qubit starting in the state $$ c_1|0⟩ + c_|1⟩ $$ starts oscillating between the states $$ c_1|0⟩ + c_2|1⟩ \text{ and } ic_1|1⟩ - ic_2|0⟩ $$ On an average, it can be visualized as the shrinking of the $ XZ $ plane of the Bloch Sphere.
+A bit-phase flip error combines bit-flip and phase-flip errors and can be seen as **applying a $ Y $ gate on the qubits**. $ Y $ gate changes a qubit in state $ \vert 0⟩ $ to state $ i\vert 1⟩ $ and a qubit in state $ \vert 1⟩ $ to state $ -i\vert 0⟩$ . Thus, a qubit starting in the state $$ c_1\vert 0⟩ + c_\vert 1⟩ $$ starts oscillating between the states $$ c_1\vert 0⟩ + c_2\vert 1⟩ \text{ and } ic_1\vert 1⟩ - ic_2\vert 0⟩ $$ On an average, it can be visualized as the shrinking of the $ XZ $ plane of the Bloch Sphere.
 
 ### Depolarization
 
@@ -59,7 +59,7 @@ In depolarization, there is uniform shrinking of the Bloch Sphere. Eventually, t
 
 ### Spontaneous emission
 
-The state $ |0⟩ $ is naturally a lower energy state than state $ |1⟩ $. In spontaneous emission, the qubit emits energy to the environment and slowly recedes towards the lower energy state $ |0⟩ $. This happens when the environment is at absolute zero, such that the qubit only emits energy to the environment and no energy is absorbed from the environment.
+The state $ \vert 0⟩ $ is naturally a lower energy state than state $ \vert 1⟩ $. In spontaneous emission, the qubit emits energy to the environment and slowly recedes towards the lower energy state $ \vert 0⟩ $. This happens when the environment is at absolute zero, such that the qubit only emits energy to the environment and no energy is absorbed from the environment.
 
 |![spontaneous](https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/image3.jpg) | 
 |:--:| 
@@ -95,7 +95,7 @@ The proposed challenges might make it look impossible to design error-correcting
 
 An open quantum system evolves according to the following equation: $$ ρ_{new} = \sum (K_{\alpha} \ ρ_{old} \ K^{\dagger}_{\alpha}) $$
 $ ρ $ is the density operator, which is an alternate way of representing the state of a qubit. $ K_{\alpha} $ is the Kraus operator that satisfies the property: $$ \sum (K_{\alpha}\ K^{\dagger}_{\alpha}) = 1 $$
-Each state that is a part of the density operator ρ evolves as follows: $$ |ψ⟩_{new} = K_{\alpha} |ψ⟩_{old} $$
+Each state that is a part of the density operator ρ evolves as follows: $$ \vert ψ⟩_{new} = K_{\alpha} \vert ψ⟩_{old} $$
 $ K_{\alpha} $ can be represented as a $ 2 $  x $ 2 $ complex matrix. The identity matrix and the Pauli matrices : $${\hat{I}, \hat{σ_x}, \hat{σ_y}, \hat{σ_z}}$$ form the basis for $ 2 $ x $ 2 $ complex matrices over complex numbers.
 
 |![matrices](https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/image5.png) | 
@@ -114,11 +114,11 @@ The no-cloning prevents us from creating exact independent copies of an arbitrar
 |:--:| 
 | *C-NOT gates* | 
 
-Here, if $ q_0 = c_1 |0⟩+ c_2 |1⟩ $, $ q_1 = |0⟩ $ and $ q_2= |0⟩ $, the outcome of the circuit is simply $ c_1 |000⟩+ c_2 |111⟩ $. Voila! **We have achieved redundancy without violating the no-cloning theorem here.** Cloning a state $ c_1 |0⟩+ c_2 |1⟩ $ would mean creating three independent copies of it. What we have created is an entanglement of three qubits, due to which the three qubits are dependent on each other. However, these entangled qubits are good enough for our purpose.
+Here, if $ q_0 = c_1 \vert 0⟩+ c_2 \vert 1⟩ $, $ q_1 = \vert 0⟩ $ and $ q_2= \vert 0⟩ $, the outcome of the circuit is simply $ c_1 \vert 000⟩+ c_2 \vert 111⟩ $. Voila! **We have achieved redundancy without violating the no-cloning theorem here.** Cloning a state $ c_1 \vert 0⟩+ c_2 \vert 1⟩ $ would mean creating three independent copies of it. What we have created is an entanglement of three qubits, due to which the three qubits are dependent on each other. However, these entangled qubits are good enough for our purpose.
 
 ### Projective measurements
 
-When a qubit $ c_1 |0⟩+ c_2 |1⟩ $ is encoded to $ c_1 |000⟩+ c_2 |111⟩ $, we have expanded the state space of qubits from a **2-dimensional state space** to an **8-dimensional state space**. The 8-dimensional state can be thought of to be composed of a logical qubit subspace with {|000⟩, |111⟩} as the basis and an error subspace with {|001⟩, |010⟩, |011⟩, |100⟩, |101⟩, |110⟩} as the basis. **A correct qubit always resides in the logical qubit subspace.  It is only when errors occur that the qubit goes to the error subspace.** For example, a correct qubit $ c_1 |000⟩+ c_2 |111⟩ $ in the logical qubit subspace may be changed to $ c_1 |010⟩+ c_2 |110⟩ $ due to errors, thereby entering the error subspace.
+When a qubit $ c_1 \vert 0⟩+ c_2 \vert 1⟩ $ is encoded to $ c_1 \vert 000⟩+ c_2 \vert 111⟩ $, we have expanded the state space of qubits from a **2-dimensional state space** to an **8-dimensional state space**. The 8-dimensional state can be thought of to be composed of a logical qubit subspace with {\vert 000⟩, \vert 111⟩} as the basis and an error subspace with {\vert 001⟩, \vert 010⟩, \vert 011⟩, \vert 100⟩, \vert 101⟩, \vert 110⟩} as the basis. **A correct qubit always resides in the logical qubit subspace.  It is only when errors occur that the qubit goes to the error subspace.** For example, a correct qubit $ c_1 \vert 000⟩+ c_2 \vert 111⟩ $ in the logical qubit subspace may be changed to $ c_1 \vert 010⟩+ c_2 \vert 110⟩ $ due to errors, thereby entering the error subspace.
 
 |![subspaces](https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/image7.jpg) | 
 |:--:| 
