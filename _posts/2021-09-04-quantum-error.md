@@ -27,7 +27,7 @@ Two interesting phenomena that set the qubits apart from classical bits are supe
 
 The state of the qubit is re-parameterized in terms of $ θ $ and $ φ $ to fit on the Bloch Sphere.  
 
-$$ \vert ψ⟩= e^{iγ} (\cos{\dfrac{θ}{2}} \vert 0⟩+ e^{iφ} \sin{\dfrac{θ}{2}} \vert 1⟩) $$ 
+$$\Large \vert ψ⟩= e^{iγ} (\cos{\dfrac{θ}{2}} \vert 0⟩+ e^{iφ} \sin{\dfrac{θ}{2}} \vert 1⟩) $$ 
 
 $ e^{iγ} $ represents the global phase factor and has no effect on the Bloch Sphere representation of the qubit.
 
@@ -99,7 +99,7 @@ The proposed challenges might make it look impossible to design error-correcting
 
 An open quantum system evolves according to the following equation: 
 
-$$ ρ_{new} = \sum (K_{\alpha} \ ρ_{old} \ K^{\dagger}_{\alpha}) $$
+$$\Large ρ_{new} = \sum (K_{\alpha} \ ρ_{old} \ K^{\dagger}_{\alpha}) $$
 
 $ ρ $ is the density operator, which is an alternate way of representing the state of a qubit. $ K_{\alpha} $ is the Kraus operator that satisfies the property: $$ \sum (K_{\alpha}\ K^{\dagger}_{\alpha}) = 1 $$
 Each state that is a part of the density operator ρ evolves as follows: $$ \vert ψ⟩_{new} = K_{\alpha} \vert ψ⟩_{old} $$
