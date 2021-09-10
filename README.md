@@ -42,3 +42,5 @@ followed by
 ```
 
 In case you want to use your own image for the article rather than using one from the web (because you made it yourself/cropped/edited it), upload it into the `/images/blog/{article number}-{first word of title}/` directory. This will let you access the image from the permalink "https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/{article number}-{first word of title}/{image file}". Finally, save the file in the format `YYYY-MM-DD-*.md`, with each word in the title being hyphen-separated. When you're done with all of this, you can push the article for publication.
+
+P. S. If you have math in your article, make sure it doesn't conflict with markdown. The way in which markdown works forces an equation to flow with the paragraph unless its surrounded by a pair of line breaks as well. These equations would also need a `\Large` or a `\large` right after opening the LaTeX environment so that it appears uniformly with the rest of the text. If you find any other peculiar behavior, please open an issue, we will try to fill it in with a fix and update the advisory in this readme.
