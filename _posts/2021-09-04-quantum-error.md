@@ -25,7 +25,11 @@ Two interesting phenomena that set the qubits apart from classical bits are supe
 |:--:| 
 | *The Bloch Sphere visualized, [^1]* | 
 
-The state of the qubit is re-parameterized in terms of $ θ $ and $ φ $ to fit on the Bloch Sphere.  $$ \vert ψ⟩= e^{iγ} (\cos{\dfrac{θ}{2}} \vert 0⟩+ e^{iφ} \sin{\dfrac{θ}{2}} \vert 1⟩) $$ $ e^{iγ} $ represents the global phase factor and has no effect on the Bloch Sphere representation of the qubit.
+The state of the qubit is re-parameterized in terms of $ θ $ and $ φ $ to fit on the Bloch Sphere.  
+
+$$ \vert ψ⟩= e^{iγ} (\cos{\dfrac{θ}{2}} \vert 0⟩+ e^{iφ} \sin{\dfrac{θ}{2}} \vert 1⟩) $$ 
+
+$ e^{iγ} $ represents the global phase factor and has no effect on the Bloch Sphere representation of the qubit.
 
 ## Errors
 
@@ -93,7 +97,10 @@ The proposed challenges might make it look impossible to design error-correcting
 
 ### Digitization of errors
 
-An open quantum system evolves according to the following equation: $$ ρ_{new} = \sum (K_{\alpha} \ ρ_{old} \ K^{\dagger}_{\alpha}) $$
+An open quantum system evolves according to the following equation: 
+
+$$ ρ_{new} = \sum (K_{\alpha} \ ρ_{old} \ K^{\dagger}_{\alpha}) $$
+
 $ ρ $ is the density operator, which is an alternate way of representing the state of a qubit. $ K_{\alpha} $ is the Kraus operator that satisfies the property: $$ \sum (K_{\alpha}\ K^{\dagger}_{\alpha}) = 1 $$
 Each state that is a part of the density operator ρ evolves as follows: $$ \vert ψ⟩_{new} = K_{\alpha} \vert ψ⟩_{old} $$
 $ K_{\alpha} $ can be represented as a $ 2 $  x $ 2 $ complex matrix. The identity matrix and the Pauli matrices : $${\hat{I}, \hat{σ_x}, \hat{σ_y}, \hat{σ_z}}$$ form the basis for $ 2 $ x $ 2 $ complex matrices over complex numbers.
@@ -118,7 +125,7 @@ Here, if $ q_0 = c_1 \vert 0⟩+ c_2 \vert 1⟩ $, $ q_1 = \vert 0⟩ $ and $ q_
 
 ### Projective measurements
 
-When a qubit $ c_1 \vert 0⟩+ c_2 \vert 1⟩ $ is encoded to $ c_1 \vert 000⟩+ c_2 \vert 111⟩ $, we have expanded the state space of qubits from a **2-dimensional state space** to an **8-dimensional state space**. The 8-dimensional state can be thought of to be composed of a logical qubit subspace with {\vert 000⟩, \vert 111⟩} as the basis and an error subspace with {\vert 001⟩, \vert 010⟩, \vert 011⟩, \vert 100⟩, \vert 101⟩, \vert 110⟩} as the basis. **A correct qubit always resides in the logical qubit subspace.  It is only when errors occur that the qubit goes to the error subspace.** For example, a correct qubit $ c_1 \vert 000⟩+ c_2 \vert 111⟩ $ in the logical qubit subspace may be changed to $ c_1 \vert 010⟩+ c_2 \vert 110⟩ $ due to errors, thereby entering the error subspace.
+When a qubit $ c_1 \vert 0⟩+ c_2 \vert 1⟩ $ is encoded to $ c_1 \vert 000⟩+ c_2 \vert 111⟩ $, we have expanded the state space of qubits from a **2-dimensional state space** to an **8-dimensional state space**. The 8-dimensional state can be thought of to be composed of a logical qubit subspace with ${\vert 000⟩, \vert 111⟩}$ as the basis and an error subspace with ${\vert 001⟩, \vert 010⟩, \vert 011⟩, \vert 100⟩, \vert 101⟩, \vert 110⟩}$ as the basis. **A correct qubit always resides in the logical qubit subspace.  It is only when errors occur that the qubit goes to the error subspace.** For example, a correct qubit $ c_1 \vert 000⟩+ c_2 \vert 111⟩ $ in the logical qubit subspace may be changed to $ c_1 \vert 010⟩+ c_2 \vert 110⟩ $ due to errors, thereby entering the error subspace.
 
 |![subspaces](https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/4-error/image7.jpg) | 
 |:--:| 
