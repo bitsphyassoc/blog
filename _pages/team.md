@@ -22,3 +22,6 @@ permalink: /team/
 |:--:| 
 | Uday Singla | 
 
+|<img src="https://bitsphyassoc.github.io/assets/images/aryan.jpeg" alt="drawing" style="width:500px;"/>| 
+|:--:| 
+| Aryan Singh | 
