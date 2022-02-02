@@ -13,7 +13,7 @@ categories: ["Alternate Dimensions","Speed of Light","Einstein’s Field Equatio
 
 Reader's caution: Ideas written in this article have been put forward by near-crazy physicists and have no experimental basis to them. It can all possibly turn out to be utter nonsense if experiments show findings against these theories. Nonetheless, these ideas are essential to understand the theories put forward to explain this weird reality of ours.
 
-|![Don't worry you don't need a PG in Physics to understand this article](https://lh3.googleusercontent.com/proxy/gX0xIhpAeV6UoyMT-JlielgHjiwI4YOowPWrF1OgixnqX7BT5X27siXpjEK6-2UD4eDf9LA8hf3nE2htiXZbsgpoSY6GdwatjwDinZkI2bgZidXrX-uQ2Ay-j_oqC6onDohCbQsTmWw4QZ_S8yJ4pHASOXE4eXxWxiE) | 
+|![Don't worry you don't need a PG in Physics to understand this article](https://raw.githubusercontent.com/bitsphyassoc/blog/master/images/blog/6-hyperspace/image1.jpeg) | 
 |:--:| 
 | *Don't worry you don't need a PG in Physics to understand this article, [^1]* |
 
