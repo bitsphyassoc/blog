@@ -1,6 +1,6 @@
 ---
 title: "Hyperspace"
-description: "To up and above the horizon!!"
+description: "Lost in the dimension maze"
 author: "Aryan Singh"
 layout: post 
 toc: false 
@@ -63,7 +63,7 @@ Mathematicians have much liberty in this aspect. They have the freedom to genera
 
 Ideas mentioned above have inspired a plethora of masterpieces. Artists and philosophers of many generations took up higher dimensions in their work. The first mention of the dimensions higher than our own was put forward by Plato. He explained humans as cavemen trying to explain the outside world by the shadows it produces on the cave walls. It's the shadows we see in our dimension. What produced those shadows in the first place, we simply do not know it (yet). When Immanuel Kant, in 1783, said that: "Everywhere space (which is not itself the boundary of another space) has three dimensions and that space in general cannot have more dimensions is based on the proposition that not more than three lines can intersect at right angles in one point. This proposition cannot at all be shown from concepts, but rests immediately on intuition and indeed on pure intuition a priori because it is apodictically (demonstrably) certain.", I really felt it.
 
-But in all honesty, much of the theories on higher dimensions was developed as a way to overcome anomalies. Another major disadvantage is the lack of experimental evidence. But a whole generation of physics has been developed taking into account Hyperspace. The beauty of the human mind reflects in ideas like these.If proved correct, there might be a chance, that if you were bored in your usual 3 dimensional cramped up life, there are many more dimensions you could go to :):
+But in all honesty, much of the theories on higher dimensions was developed as a way to overcome anomalies. Another major disadvantage is the lack of experimental evidence. But a whole generation of physics has been developed taking into account Hyperspace. The beauty of the human mind reflects in ideas like these. If proved correct, there might be a chance, that if you were bored in your usual 3 dimensional cramped up life, there are many more dimensions you could go to :):
 
 |![Physics: an elegant masterpiece](https://i1.wp.com/tmrwedition.com/wp-content/uploads/2017/06/maths.jpg?fit=620%2C465&ssl=1) | 
 |:--:| 
