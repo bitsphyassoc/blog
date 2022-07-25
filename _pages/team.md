@@ -6,17 +6,13 @@ permalink: /team/
 
 ## The Authors for the Blog Articles
 
-|<img src="https://bitsphyassoc.github.io/assets/images/b.jpeg" alt="drawing" style="width:500px;"/>| 
-|:--:| 
-| Shanmugha Balan, Chief Editor | 
-
 |<img src="https://bitsphyassoc.github.io/assets/images/abhinav.jpg" alt="drawing" style="width:500px;"/>| 
 |:--:| 
-| Abhinav Choudhary, Junior Editor | 
+| Abhinav Choudhary, Chief Editor | 
 
 |<img src="https://bitsphyassoc.github.io/assets/images/suyash.png" alt="drawing" style="width:500px;"/>| 
 |:--:| 
-| Suyash Kumar, Junior Editor | 
+| Suyash Kumar | 
 
 |<img src="https://bitsphyassoc.github.io/assets/images/uday.jpg" alt="drawing" style="width:500px;"/>| 
 |:--:| 
@@ -25,3 +21,7 @@ permalink: /team/
 |<img src="https://bitsphyassoc.github.io/assets/images/aryan.jpeg" alt="drawing" style="width:500px;"/>| 
 |:--:| 
 | Aryan Singh | 
+
+|<img src="https://bitsphyassoc.github.io/assets/images/b.jpeg" alt="drawing" style="width:500px;"/>| 
+|:--:| 
+| Shanmugha Balan | 
