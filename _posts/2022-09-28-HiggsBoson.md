@@ -1,11 +1,14 @@
 ---
 title: "The Higgs Boson"
-author: Sukriti Mathur
+author:
+  - Sukriti Mathur- Writer
+  - Umang Agarwal- Writer
+  - Abhinav Choudhary- Chief Editor
 description: "The Higgs: A decade in review"
 layout: post
 toc: false
 comments: true
-image: 
+image: https://www.worldatlas.com/r/w2560-q80/upload/26/9f/8b/shutterstock-196545548.jpg
 search_exclude: false
 categories: [Physics, THe god particle, particle physics,  Higgs boson, Nobel Prize, CERN]
 ---
