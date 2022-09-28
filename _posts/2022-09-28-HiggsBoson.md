@@ -1,15 +1,11 @@
 ---
 title: "The Higgs Boson"
-author:
-  - Sukriti Mathur Writer
-  - Umang Agarwal Writer
-  - Abhinav Choudhary Chief Editor
+author: Sukriti Mathur
 description: "The Higgs: A decade in review"
 layout: post
 toc: false
 comments: true
-image: https://i.insider.com/53da420deab8ea9c45c0cc6b?width=1000&format=jpeg
-hide: false
+image: 
 search_exclude: false
 categories: [Physics, THe god particle, particle physics,  Higgs boson, Nobel Prize, CERN]
 ---
@@ -46,7 +42,7 @@ Another vital element of this image is symmetry. Just as a shape can be called s
 
 |![Particles of the Standard Model of particle physics.](https://cds.cern.ch/images/OPEN-PHO-CHART-2015-001-1/file?size=large) | 
 |:--:| 
-| *Particles of the Standard Model of particle physics., [^4]* |
+| *Particles of the Standard Model of particle physics., [^5]* |
 
 ## Higgs Mechanism:
 Before the prediction of the Higgs particle, the Standard Model was incomplete. Quantum field theory with gauge invariance (symmetry which leads to conservation of a quantity) successfully understood electrostatic and strong forces. But till the 1960’s it was unable to create a gauge invariant theory for the weak forces. The symmetry required W and Z bosons to be massless but studies predicted they had a non-zero mass. Other promising solutions required particles named Goldstone bosons to exist, which were also proved to be not existing. This was a major issue for particle physicists. So there were two options - either gauge invariance was an incorrect approach or something unknown was giving mass to W and Z bosons in a way which did not create Goldstone bosons. 
