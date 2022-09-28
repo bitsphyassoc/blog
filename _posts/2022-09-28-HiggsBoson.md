@@ -1,9 +1,9 @@
 ---
 title: "The Higgs Boson"
 author:
-  - Sukriti Mathur- Writer
-  - Umang Agarwal- Writer
-  - Abhinav Choudhary- Chief Editor
+  - Sukriti Mathur Writer
+  - Umang Agarwal Writer
+  - Abhinav Choudhary Chief Editor
 description: "The Higgs: A decade in review"
 layout: post
 toc: false
